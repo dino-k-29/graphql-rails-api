@@ -1,24 +1,31 @@
-# README
+# GraphQL Rails API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple demonstration of integrating GraphQL into a Rails API, instead of creating traditional RESTful endpoints.
 
-Things you may want to cover:
+---
 
-* Ruby version
+Live demo: `https://secret-garden-22357.herokuapp.com/movies?query={movie(id:1){title,year,actors{name}}}`
 
-* System dependencies
+The above code requests the Movie with an id of 1, it's title, year and actors, along with each actor's name:
 
-* Configuration
+```
+"query={
+  movie(id: 1) {
+    title,
+    year,
+    actors {
+      name
+    }
+  }
+}"
+```
 
-* Database creation
+---
 
-* Database initialization
+This project was created following this tutorial: [https://www.sitepoint.com/building-apis-ruby-rails-graphql/](https://www.sitepoint.com/building-apis-ruby-rails-graphql/)
 
-* How to run the test suite
+Changes from the tutorial:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Instead of the method presented in the tutorial `create_join_table` was used to create the association
+* `get 'movies/', to: 'movies#query'` was added to `routes.rb`
+* Erroneous spaces removed from copied code e.g. `movie.actors << actor`

@@ -1,6 +1,6 @@
 # GraphQL Rails API
 
-This is a simple demonstration of integrating GraphQL into a Rails API, instead of creating traditional RESTful endpoints.
+This is a simple demonstration of integrating GraphQL into a Rails API, an alternative to traditional REST endpoints.
 
 ---
 
